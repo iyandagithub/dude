@@ -60,6 +60,21 @@
             color: #ff3333;
         }
 
+        /* NEW: Mobile menu button styles */
+        .mobile-menu-button {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #ff3333;
+            padding: 5px;
+        }
+
+        .mobile-menu-button:hover {
+            color: #8B4513;
+        }
+
         .hero {
             height: 100vh;
             display: flex;
@@ -175,21 +190,47 @@
             color: #7CD7FF;
         }
 
+        /* UPDATED: Mobile styles */
         @media (max-width: 768px) {
             .hero-content h1 {
                 font-size: 2.5rem;
             }
             
+            .mobile-menu-button {
+                display: block;
+            }
+            
             .nav-links {
                 display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(124, 215, 255, 0.95);
+                padding: 20px;
+                flex-direction: column;
+                align-items: center;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                margin: 10px 0;
+                display: block;
+                font-size: 1.2rem;
             }
         }
     </style>
 </head>
 <body>
+    <!-- UPDATED: Navigation with mobile menu button -->
     <nav>
         <div class="container nav-content">
             <div class="logo">DUDE</div>
+            <button class="mobile-menu-button">☰</button>
             <div class="nav-links">
                 <a href="#doc">Doc</a>
                 <a href="#about">About</a>
@@ -253,12 +294,36 @@
         </div>
     </footer>
 
+    <!-- UPDATED: Script with mobile menu functionality -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
             AOS.init({
                 duration: 800,
                 offset: 100,
                 once: true
+            });
+
+            // Mobile menu functionality
+            const menuButton = document.querySelector('.mobile-menu-button');
+            const navLinks = document.querySelector('.nav-links');
+
+            menuButton.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+
+            // Close menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.nav-content')) {
+                    navLinks.classList.remove('active');
+                }
             });
         });
     </script>
