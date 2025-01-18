@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dude - P2E Telegram Game</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #7CD7FF;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(124, 215, 255, 0.95);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff3333;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 30px;
+            transition: color 0.3s;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            color: #ff3333;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #ff3333;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #8B4513;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            background: #704012;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #ff3333;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .game-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .preview-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .preview-card h3 {
+            color: #8B4513;
+            margin: 15px 0;
+        }
+
+        .preview-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .how-to-play {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .how-to-play ol {
+            list-style-position: inside;
+            margin-top: 20px;
+        }
+
+        .how-to-play li {
+            margin: 15px 0;
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            background: #8B4513;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #7CD7FF;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container nav-content">
+            <div class="logo">DUDE</div>
+            <div class="nav-links">
+                <a href="#doc">Doc</a>
+                <a href="#about">About</a>
+                <a href="#how-to-play">How to Play</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <img src="/Users/enochadediran/dude/images:/dude-title.png" alt="dude title" style="width: 200px; height: auto; margin-bottom: 0px;">
+            <h1>DUDE</h1>
+            <p>Join the Ultimate P2E Experience on Telegram</p>
+            <a href="#how-to-play" class="cta-button">Start Playing</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About DUDE</h2>
+            <div class="game-preview">
+                <div class="preview-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="/Users/enochadediran/dude/images:/community.png" alt="Community">
+                    <h3>Join the Community</h3>
+                    <p>Connect with players worldwide in our thriving Telegram community</p>
+                </div>
+                <div class="preview-card" data-aos="fade-up">
+                    <img src="/Users/enochadediran/dude/images:/game-preview.jpg" alt="Game Preview">
+                    <h3>Flappy DUDE</h3>
+                    <p>Experience the addictive gameplay of our Telegram mini-app</p>
+                </div>
+                <div class="preview-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="/Users/enochadediran/dude/images:/rewards.jpg" alt="Rewards">
+                    <h3>Earn Rewards</h3>
+                    <p>Play, compete, and earn DUDE points in our innovative gaming ecosystem</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-to-play">
+        <div class="container">
+            <h2 class="section-title">How to Play, Dude</h2>
+            <div class="how-to-play" data-aos="fade-up">
+                <ol>
+                    <li>Download Telegram</li>
+                    <li>Search @DUDECommunityBot</li>
+                    <li>Start bot</li>
+                    <li>Hit play!</li>
+                </ol>
+            </div>
+            <a href="https://t.me/DUDECommunityBot" class="cta-button">Play Now</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://x.com/DUDESolanaMeme">X</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                offset: 100,
+                once: true
+            });
+        });
+    </script>
+</body>
+</html>
